@@ -1,0 +1,102 @@
+[
+    {
+        "_id": "59dade22fc755c715257dd8b",
+        "meetingName": "GRUPO LA FLAMA PANAMERICANA",
+        "buildingName": "No Name",
+        "locationInfo": [
+            {
+                "latLong": {
+                    "lat": 40.8626118,
+                    "lng": -73.92621030000001
+                },
+                "formattedAddress": "35 Thayer St, New York, NY 10040, USA"
+            }
+        ],
+        "wheelchair": "Available",
+        "meetingsInfo": {
+            "day": "Tuesday",
+            "time": "8:00 PM to 10:00 PM",
+            "type": "Open meeting"
+        }
+    },
+    {
+        "_id": "59dade22fc755c715257dd8c",
+        "meetingName": "GRUPO LIBERTAD",
+        "buildingName": "Episcopal Holy Rood Church",
+        "locationInfo": [
+            {
+                "latLong": {
+                    "lat": 40.849431,
+                    "lng": -73.93840399999999
+                },
+                "formattedAddress": "715 W 179th St, New York, NY 10033, USA"
+            }
+        ],
+        "wheelchair": "Available",
+        "meetingsInfo": {
+            "day": "Tuesday",
+            "time": "7:30 PM to 8:30 PM",
+            "type": "Big Book meeting"
+        }
+    },
+    {
+        "_id": "59dade22fc755c715257dd8c",
+        "meetingName": "GRUPO LIBERTAD",
+        "buildingName": "Episcopal Holy Rood Church",
+        "locationInfo": [
+            {
+                "latLong": {
+                    "lat": 40.849431,
+                    "lng": -73.93840399999999
+                },
+                "formattedAddress": "715 W 179th St, New York, NY 10033, USA"
+            }
+        ],
+        "wheelchair": "Available",
+        "meetingsInfo": {
+            "day": "Tuesday",
+            "time": "9:30 PM to 10:30 PM",
+            "type": "Closed Discussion meeting"
+        }
+    },
+    {
+        "_id": "59dade22fc755c715257dd8d",
+        "meetingName": "GRUPO RECUPERACION",
+        "buildingName": "Church Santa Rosa de Lima",
+        "locationInfo": [
+            {
+                "latLong": {
+                    "lat": 40.8380556,
+                    "lng": -73.93891789999999
+                },
+                "formattedAddress": "502 W 165th St, New York, NY 10032, USA"
+            }
+        ],
+        "wheelchair": "Unavailable",
+        "meetingsInfo": {
+            "day": "Tuesday",
+            "time": "8:00 PM to 9:00 PM",
+            "type": "Closed Discussion meeting"
+        }
+    },
+    {
+        "_id": "59dade22fc755c715257dd97",
+        "meetingName": "WASHINGTON HEIGHTS (:I)",
+        "buildingName": "Holy Rood Church",
+        "locationInfo": [
+            {
+                "latLong": {
+                    "lat": 40.849431,
+                    "lng": -73.93840399999999
+                },
+                "formattedAddress": "715 W 179th St, New York, NY 10033, USA"
+            }
+        ],
+        "wheelchair": "Available",
+        "meetingsInfo": {
+            "day": "Tuesday",
+            "time": "7:30 PM to 8:30 PM",
+            "type": "Open meeting"
+        }
+    }
+]
