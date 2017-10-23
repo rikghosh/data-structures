@@ -1,4 +1,4 @@
-#Data Model 
+# Data Model 
 
 I’ll be collecting data from a force sensor and an IR sensor, storing each in a separate table. 
 
