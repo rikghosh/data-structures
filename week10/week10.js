@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
              FROM sensordata 
              GROUP BY sensormonth, sensorday;`;
              
-    var trial = `count(*) as num_obs, 
+    var trial = `SELECT *, 
                 FROM fsrData;`;
              
     client.connect();
