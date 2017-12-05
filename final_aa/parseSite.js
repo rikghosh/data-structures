@@ -9,9 +9,9 @@ var cheerio = require('cheerio');
 // printenv | grep NEW_VAR
 var apiKey = process.env.GMAKEY;
 
-// var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
+var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
 
-var zones = ['m10'];
+// var zones = ['m01'];
 
 for (let zone of zones) {
     parse(zone);
@@ -52,6 +52,8 @@ function parse(zone) {
          });
     });
     
+    // console.log(times);
+    
     // clean meeting names
     for (var i in meetingNames) {
         meetingNames[i] = meetingNames[i].split(' - ')[0];
@@ -82,11 +84,29 @@ function parse(zone) {
         times[i] = times[i].replace('         ', ';');
         times[i] = times[i].replace('        ', ';');
         times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
         times[i] = times[i].split(';')
         for (var j in times[i]) {
             times[i][j] = times[i][j].trim();
         };
     };
+    // console.log(times);
     
     // format meeting information using function below
     for (var i in times) {
