@@ -9,9 +9,9 @@ var cheerio = require('cheerio');
 // printenv | grep NEW_VAR
 var apiKey = process.env.GMAKEY;
 
-var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
+// var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
 
-// var zones = ['m01'];
+var zones = ['m10'];
 
 for (let zone of zones) {
     parse(zone);
@@ -77,6 +77,7 @@ function parse(zone) {
     };
     
     // clean meeting information
+    // somehow this replace needs to be repeated this many times to work without errors
     for (var i in times) {
         times[i] = times[i].replace(/[ \t]+/g, ' ');
         times[i] = times[i].replace(/[ \n]/g, ' ');
@@ -101,12 +102,112 @@ function parse(zone) {
         times[i] = times[i].replace('         ', ';');
         times[i] = times[i].replace('         ', ';');
         times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('         ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        times[i] = times[i].replace('        ', ';');
+        
         times[i] = times[i].split(';')
         for (var j in times[i]) {
             times[i][j] = times[i][j].trim();
         };
     };
-    // console.log(times);
+    console.log(times);
     
     // format meeting information using function below
     for (var i in times) {
@@ -149,7 +250,7 @@ function parse(zone) {
         });
         setTimeout(callback, 100);
     }, function() {
-        console.log(combinedData);
+        // console.log(combinedData);
         fs.writeFileSync('meetingsData/meetingsData' + zone + '.txt', JSON.stringify(combinedData));
         
     });
