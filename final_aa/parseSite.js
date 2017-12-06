@@ -9,9 +9,9 @@ var cheerio = require('cheerio');
 // printenv | grep NEW_VAR
 var apiKey = process.env.GMAKEY;
 
-// var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
+var zones = ['m01', 'm02', 'm03', 'm04', 'm05', 'm06', 'm07', 'm08', 'm09', 'm10'];
 
-var zones = ['m10'];
+// var zones = ['m10'];
 
 for (let zone of zones) {
     parse(zone);
