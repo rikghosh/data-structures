@@ -10,12 +10,13 @@ db_credentials.database = 'datastructures';
 db_credentials.password = process.env.AWSRDS_PW;
 db_credentials.port = 5432;
 
+
 app.get('/', function(req, res) {
     // Connect to the AWS RDS Postgres database
     const client = new Pool(db_credentials);
 
     // SQL query
-    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York) as minute,
+    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
                 EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
                 EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
                 EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
@@ -33,6 +34,7 @@ app.get('/', function(req, res) {
     client.end();
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, function() {
+// app.listen(3000, function() {
     console.log('Server listening...');
 });

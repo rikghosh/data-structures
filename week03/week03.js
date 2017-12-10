@@ -10,6 +10,8 @@ var cheerio = require('cheerio');
 var apiKey = process.env.GMAKEY;
 
 // initialize variables
+var meetingNames = [];
+var buildingNames = [];
 var addresses = [];
 var meetingsData = [];
 
@@ -34,11 +36,11 @@ for (var i=0; i<addresses.length; i++) {
 async.eachSeries(addresses, function(value, callback) {
     var apiRequest = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + value.split(' ').join('+') + '&key=' + apiKey;
     var thisMeeting = new Object;
-    thisMeeting.address = value;
+    // thisMeeting.address = value;
     request(apiRequest, function(err, resp, body) {
         if (err) {throw err;}
         thisMeeting.latLong = JSON.parse(body).results[0].geometry.location;
-        // thisMeeting.formattedAddress = JSON.parse(body).results[0].formatted_address; the assignment seems to say the formatted address is not wanted?
+        thisMeeting.formattedAddress = JSON.parse(body).results[0].formatted_address;
         meetingsData.push(thisMeeting);
     });
     setTimeout(callback, 2000);
