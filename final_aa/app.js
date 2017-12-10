@@ -61,8 +61,10 @@ app.get('/aa', function(req, res) {
         // convert numerical days to words
         var todayWord = days[today];
         var tomorrowWord = days[tomorrow];
+        
+        const myDB = db.db('rik');
 
-        var collection = db.collection(collName);
+        var collection = myDB.collection(collName);
         
         console.log('setting collection');
         
