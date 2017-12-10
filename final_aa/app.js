@@ -55,7 +55,7 @@ app.get('/aa', function(req, res) {
         var tomorrow;
         if (today == 6) {tomorrow = 0;}
         else {tomorrow = today + 1}
-        var hour = dateTimeNow.getHours();
+        var hour = dateTimeNow.getHours() - 5;
         
         // convert numerical days to words
         var todayWord = days[today];
@@ -117,7 +117,7 @@ app.get('/aa', function(req, res) {
     
 });
 
-// app.listen(process.env.PORT, function() {
-app.listen(4000, function() {
+app.listen(process.env.PORT, function() {
+// app.listen(4000, function() {
     console.log('Server listening...');
 });
