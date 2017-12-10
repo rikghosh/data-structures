@@ -20,28 +20,28 @@ var url = process.env.ATLAS;
 var index1 = fs.readFileSync("index1.txt");
 var index3 = fs.readFileSync("index3.txt");
 
-app.get('/', function(req, res) {
-    // Connect to the AWS RDS Postgres database
-    const client = new Pool(db_credentials);
+// app.get('/', function(req, res) {
+//     // Connect to the AWS RDS Postgres database
+//     const client = new Pool(db_credentials);
 
-    // SQL query
-    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
-                EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
-                EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
-                EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
-                count(*) as num_obs,
-                max(irstatus) as walked_past,
-                round(avg(force)) as water_amount
-                FROM fsrData LEFT OUTER JOIN irData USING (time)
-                GROUP BY month, day, hour, minute;`;
+//     // SQL query
+//     var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
+//                 EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
+//                 EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
+//                 EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
+//                 count(*) as num_obs,
+//                 max(irstatus) as walked_past,
+//                 round(avg(force)) as water_amount
+//                 FROM fsrData LEFT OUTER JOIN irData USING (time)
+//                 GROUP BY month, day, hour, minute;`;
              
-    client.connect();
-    client.query(q, (qerr, qres) => {
-        res.send(qres.rows);
-        console.log('responded to request');
-    });
-    client.end();
-});
+//     client.connect();
+//     client.query(q, (qerr, qres) => {
+//         res.send(qres.rows);
+//         console.log('responded to request');
+//     });
+//     client.end();
+// });
 
 app.get('/aa', function(req, res) {
 
@@ -49,7 +49,7 @@ app.get('/aa', function(req, res) {
         if (err) {return console.dir(err);}
         
         // create array to convert numerical days
-        var days = ['Sundays', 'Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays']
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         
         var dateTimeNow = new Date();
         var today = dateTimeNow.getDay();
@@ -85,7 +85,7 @@ app.get('/aa', function(req, res) {
                 meetingAddress : "$locationInfo.formattedAddress",
                 meetingWheelchair : "$wheelchair",
                 },
-                    meetingDay : { $push : "$day" },
+                    meetingDay : { $push : "$meetingsInfo.day" },
                     meetingStartTime : { $push : "$meetingsInfo.start" }, 
                     meetingType : { $push : "$meetingsInfo.type" }
             }
@@ -106,6 +106,7 @@ app.get('/aa', function(req, res) {
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(index1);
                 res.write(JSON.stringify(docs));
+                fs.writeFileSync('mongo_aggregation_result.JSON', JSON.stringify(docs, null, 4));
                 res.end(index3);
             }
             db.close();
