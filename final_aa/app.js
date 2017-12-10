@@ -117,7 +117,7 @@ app.get('/aa', function(req, res) {
     
 });
 
-app.listen(process.env.PORT, function() {
-// app.listen(4000, function() {
+// app.listen(process.env.PORT, function() {
+app.listen(4000, function() {
     console.log('Server listening...');
 });
