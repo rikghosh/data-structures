@@ -20,28 +20,28 @@ var url = process.env.ATLAS;
 var index1 = fs.readFileSync("index1.txt");
 var index3 = fs.readFileSync("index3.txt");
 
-// app.get('/', function(req, res) {
-//     // Connect to the AWS RDS Postgres database
-//     const client = new Pool(db_credentials);
+app.get('/', function(req, res) {
+    // Connect to the AWS RDS Postgres database
+    const client = new Pool(db_credentials);
 
-//     // SQL query
-//     var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
-//                 EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
-//                 EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
-//                 EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
-//                 count(*) as num_obs,
-//                 max(irstatus) as walked_past,
-//                 round(avg(force)) as water_amount
-//                 FROM fsrData LEFT OUTER JOIN irData USING (time)
-//                 GROUP BY month, day, hour, minute;`;
+    // SQL query
+    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
+                EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
+                EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
+                EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
+                count(*) as num_obs,
+                max(irstatus) as walked_past,
+                round(avg(force)) as water_amount
+                FROM fsrData LEFT OUTER JOIN irData USING (time)
+                GROUP BY month, day, hour, minute;`;
              
-//     client.connect();
-//     client.query(q, (qerr, qres) => {
-//         res.send(qres.rows);
-//         console.log('responded to request');
-//     });
-//     client.end();
-// });
+    client.connect();
+    client.query(q, (qerr, qres) => {
+        res.send(qres.rows);
+        console.log('responded to request');
+    });
+    client.end();
+});
 
 app.get('/aa', function(req, res) {
 
@@ -114,7 +114,7 @@ app.get('/aa', function(req, res) {
     
 });
 
-// app.listen(process.env.PORT, function() {
-app.listen(4000, function() {
+app.listen(process.env.PORT, function() {
+// app.listen(4000, function() {
     console.log('Server listening...');
 });
