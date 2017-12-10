@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/aa', function(req, res) {
-
+    console.log('connected to aa');
     MongoClient.connect(url, function(err, db) {
         if (err) {return console.dir(err);}
         
@@ -63,7 +63,9 @@ app.get('/aa', function(req, res) {
         var tomorrowWord = days[tomorrow];
 
         var collection = db.collection(collName);
-    
+        
+        console.log('setting collection');
+        
         collection.aggregate([ // start of aggregation pipeline
             // match by day and time
             { $unwind : "$meetingsInfo" },
@@ -100,15 +102,20 @@ app.get('/aa', function(req, res) {
             }
         
             ]).toArray(function(err, docs) { // end of aggregation pipeline
+            
+            console.log('collection organized');
             if (err) {console.log(err)}
             
             else {
+                console.log('writing html');
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(index1);
                 res.write(JSON.stringify(docs));
                 res.end(index3);
             }
+            console.log('closing database');
             db.close();
+            console.log('database closed');
         });
     });
     
