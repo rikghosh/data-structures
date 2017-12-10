@@ -25,7 +25,7 @@ app.get('/', function(req, res) {
     const client = new Pool(db_credentials);
 
     // SQL query
-    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York) as minute,
+    var q = `SELECT EXTRACT(MINUTE FROM time AT TIME ZONE 'America/New_York') as minute,
                 EXTRACT(HOUR FROM time AT TIME ZONE 'America/New_York') as hour, 
                 EXTRACT(DAY FROM time AT TIME ZONE 'America/New_York') as day,
                 EXTRACT(MONTH FROM time AT TIME ZONE 'America/New_York') as month,
