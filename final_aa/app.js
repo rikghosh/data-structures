@@ -5,9 +5,9 @@ var fs = require('fs');
 // Postgres
 const { Pool } = require('pg');
 var db_credentials = new Object();
-db_credentials.user = 'aaron';
+db_credentials.user = 'rikghosh';
 db_credentials.host = process.env.AWSRDS_EP;
-db_credentials.database = 'sensors';
+db_credentials.database = 'datastructures';
 db_credentials.password = process.env.AWSRDS_PW;
 db_credentials.port = 5432;
 
