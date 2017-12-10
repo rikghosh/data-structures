@@ -106,7 +106,6 @@ app.get('/aa', function(req, res) {
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(index1);
                 res.write(JSON.stringify(docs));
-                fs.writeFileSync('mongo_aggregation_result.JSON', JSON.stringify(docs, null, 4));
                 res.end(index3);
             }
             db.close();
